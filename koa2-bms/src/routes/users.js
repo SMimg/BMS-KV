@@ -10,4 +10,15 @@ router.get('/bar', function (ctx, next) {
   ctx.body = 'this is a users/bar response'
 })
 
+// 登录
+router.post('/login', async (ctx, next) => {
+  const { userName, password } = ctx.request.body
+  ctx.body = {
+    tag: 100,
+    userName,
+    password
+  }
+})
+
+
 module.exports = router
